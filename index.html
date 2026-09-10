@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Saving Earth!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e0f2f1, #e8f5e9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+            animation: popUp 0.6s ease-out;
+        }
+
+        @keyframes popUp {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            color: #2e7d32;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #455a64;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .badge {
+            background-color: #81c784;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            font-size: 14px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(129, 199, 132, 0.4);
+        }
+
+        /* Confetti Effect */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffeb3b;
+            position: absolute;
+            top: -10px;
+            z-index: 1;
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(105vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Confetti Elements -->
+    <script>
+        for (let i = 0; i < 50; i++) {
+            let confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            confetti.style.backgroundColor = ['#ff4081', '#00e676', '#00b0ff', '#ffea00', '#d500f9'][Math.floor(Math.random() * 5)];
+            confetti.style.opacity = Math.random();
+            document.body.appendChild(confetti);
+        }
+    </script>
+
+    <div class="card">
+        <div class="icon">🌱🗑️✨</div>
+        <h1>आपका बहुत-बहुत धन्यवाद!</h1>
+        <p>सही जगह पर कचरा फेंककर आपने हमारे पर्यावरण को स्वच्छ और सुंदर बनाने में अपना बहुमूल्य योगदान दिया है। आप जैसे जिम्मेदार नागरिकों की वजह से ही हमारी धरती हरी-भरी रह सकती है।</p>
+        <div class="badge">ECO HERO 🏆</div>
+    </div>
+
+</body>
+</html>
